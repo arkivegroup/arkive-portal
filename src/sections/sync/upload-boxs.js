@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 import { UploadBox } from '@/components/upload'
 import Iconify from '@/components/iconify'
 
+import { ARKIVE_API } from 'src/config-global'
+
 export default function UploadBoxs() {
   const uploadOptions = [
     {
@@ -27,17 +29,28 @@ export default function UploadBoxs() {
         }),
       )
 
-      const res = await fetch('/api/files', {
+      const file = newFiles[0]
+
+      const formData = new FormData()
+
+      formData.append('file', file, file.name)
+
+      const res = await fetch(ARKIVE_API.BASE_URL + '/files', {
         method: 'POST',
-        body: JSON.stringify(newFiles[0]),
         headers: {
-          'Content-Type': 'application/json',
+          accept: 'application/json',
+          // 'content-type': 'multipart/form-data',
         },
+        body: formData,
       })
 
       const success = await res.json()
 
-      setFiles([...files, ...newFiles])
+      if (success) {
+        console.log('File uploaded successfully')
+      }
+
+      setFiles([])
     },
 
     [files],
@@ -47,7 +60,7 @@ export default function UploadBoxs() {
     <Card sx={{ p: 3 }}>
       <Grid container spacing={3} sx={{ mt: 3 }}>
         {uploadOptions.map(option => (
-          <Grid xs={12} md={6} lg={4} key={option.value}>
+          <Grid xs={12} md={6} key={option.value}>
             <UploadBox
               onDrop={handleDrop}
               placeholder={

@@ -11,8 +11,8 @@ export default function SyncView() {
   return (
     <Container maxWidth="xl">
       <UserProfileView />
-      <ProductUnavailable />
-      {/* <UploadBoxs /> */}
+      {/* <ProductUnavailable /> */}
+      <UploadBoxs />
     </Container>
   )
 }
