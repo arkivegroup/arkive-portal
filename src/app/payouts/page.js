@@ -1,12 +1,12 @@
-import Billing from "@/sections/billing/billing-view";
+import Payouts from "@/sections/payouts/payouts-view";
 import DashboardLayout from "@/layouts/dashboard/dashboard-layout";
 import AuthGuard from "@/auth/auth-guard";
 
-export default async function BillingPage() {
+export default async function PayoutsPage() {
   return (
     <AuthGuard>
       <DashboardLayout>
-        <Billing />
+        <Payouts />
       </DashboardLayout>
     </AuthGuard>
   );

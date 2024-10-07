@@ -7,7 +7,7 @@ export const paths = {
   page403: "/error/403",
   page404: "/error/404",
   page500: "/error/500",
-  pricing: "/pricing",
+  payouts: "/payouts",
   auth: {
     login: "/auth/login",
     verify: "/auth/verify",
