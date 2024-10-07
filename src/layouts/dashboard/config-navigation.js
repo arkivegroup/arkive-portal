@@ -74,11 +74,11 @@ export function useNavData() {
             path: paths.insights,
             icon: ICONS.analytics,
           },
-          {
-            title: "Payouts",
-            path: paths.payouts,
-            icon: ICONS.analytics,
-          },
+          // {
+          //   title: "Payouts",
+          //   path: paths.payouts,
+          //   icon: ICONS.analytics,
+          // },
         ],
       },
 

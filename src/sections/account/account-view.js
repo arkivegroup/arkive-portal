@@ -8,6 +8,8 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Chip,
+  Button,
 } from "@mui/material";
 import UserProfileView from "@/sections/user/user-profile-view";
 import AccountDetails from "./account-details";
@@ -16,15 +18,25 @@ const Account = () => {
   return (
     <Container maxWidth="xl">
       <UserProfileView />
-      <Box>
-        <Typography variant="h4" gutterBottom>
-          Welcome back, you beautiful anti-waste trooper !!
-        </Typography>
-        <Typography variant="body1">
-          Here you can manage your account details.
-        </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box>
+          <Typography variant="h4" gutterBottom>
+            Welcome back, you beautiful anti-waste trooper !!
+          </Typography>
+          <Typography variant="body1">
+            Here you can manage your account details.
+          </Typography>
+        </Box>
+        <Button color="primary" variant="contained" size="small">
+          Request Payout
+        </Button>
       </Box>
-
       <Grid container xs={6} mt={2}>
         <Card
           sx={{
@@ -38,7 +50,7 @@ const Account = () => {
         >
           <Typography variant="h6">ANEC COSMETICS</Typography>
           <FormControl sx={{ minWidth: 160 }} size="small">
-            <InputLabel id="select-plan-label">Select plan</InputLabel>
+            {/* <InputLabel id="select-plan-label">Select plan</InputLabel>
             <Select
               labelId="select-plan-label"
               id="select-plan"
@@ -46,7 +58,21 @@ const Account = () => {
             >
               <MenuItem value="ecomaster">ecomaster plan</MenuItem>
               <MenuItem value="second plan">second plan</MenuItem>
-            </Select>
+            </Select> */}
+            <Chip
+              variant="outlined"
+              label="Eco Master Plan"
+              sx={{
+                border: "1px solid grey",
+                backgroundColor: `white`,
+                color: "black",
+                borderRadius: 3,
+                fontWeight: "bold",
+                fontSize: "0.85rem",
+                padding: "1px 6px",
+                "& svg": { marginRight: "4px" },
+              }}
+            />
           </FormControl>
         </Card>
 
