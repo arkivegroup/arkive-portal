@@ -11,6 +11,7 @@ import {
   Pagination,
   IconButton,
   Chip,
+  Divider,
 } from "@mui/material";
 
 // Sample invoice data
@@ -268,7 +269,101 @@ const PayoutDetails = () => {
           </Button>
         </Grid>
       </Grid>
-
+      <Box sx={{ py: 3 }}>
+        <Grid container spacing={2}>
+          <Grid item md={3} sm={6} xs={12}>
+            <Card>
+              <Box
+                sx={{
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  p: 3,
+                }}
+              >
+                <div>
+                  <Typography color="textPrimary" variant="subtitle2">
+                    Total Orders
+                  </Typography>
+                  <Typography color="textPrimary" sx={{ mt: 1 }} variant="h4">
+                    1.9M
+                  </Typography>
+                </div>
+              </Box>
+              <Divider />
+            </Card>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+            <Card>
+              <Box
+                sx={{
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  p: 3,
+                }}
+              >
+                <div>
+                  <Typography color="textPrimary" variant="subtitle2">
+                    Total Amount
+                  </Typography>
+                  <Typography color="textPrimary" sx={{ mt: 1 }} variant="h5">
+                    $41.2K
+                  </Typography>
+                </div>
+                {/* <LineChart /> */}
+              </Box>
+              <Divider />
+            </Card>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+            <Card>
+              <Box
+                sx={{
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  p: 3,
+                }}
+              >
+                <div>
+                  <Typography color="textPrimary" variant="subtitle2">
+                    Paid
+                  </Typography>
+                  <Typography color="textPrimary" sx={{ mt: 1 }} variant="h5">
+                    $11.2K
+                  </Typography>
+                </div>
+                {/* <LineChart /> */}
+              </Box>
+              <Divider />
+            </Card>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+            <Card>
+              <Box
+                sx={{
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  p: 3,
+                }}
+              >
+                <div>
+                  <Typography color="textPrimary" variant="subtitle2">
+                    To be paid
+                  </Typography>
+                  <Typography color="textPrimary" sx={{ mt: 1 }} variant="h5">
+                    $5K
+                  </Typography>
+                </div>
+                {/* <BarChart /> */}
+              </Box>
+              <Divider />
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
       <Box sx={{ py: 3, overflowX: "auto" }}>
         <Box sx={{ minWidth: "600px" }}>
           {renderSection("Pending", invoices.pending)}{" "}
